@@ -53,10 +53,14 @@
   margin: 20px 0 0 50px;
   width: 10%;
   height: 30px;
-  background-color: gray;
   display: flex;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
   justify-content: center;
   align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.search-root .search-wrapper .search-container .bottom-block .fav-item:hover {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.4);
 }
 .search-root .search-wrapper .search-container .bottom-block .fav-item p {
   display: flex;
@@ -110,6 +114,7 @@
   background-color: #ffffff;
   margin: 50px 0 0 50px;
   text-align: center;
+  animation: movieItemAnim 1s;
 }
 .results-root .results-wrapper .results-container .movies-block .movies-item img {
   width: 100%;
@@ -130,22 +135,43 @@
   bottom: 5px;
   right: 5px;
 }
+@keyframes movieItemAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .favorites-root {
   margin: 50px 0 50px;
 }
+.favorites-root .favorites-wrapper .favorites-container h2 {
+  font-size: 32px;
+  font-weight: bold;
+  display: none;
+  margin: 0 0 20px;
+  text-align: center;
+}
+.favorites-root .favorites-wrapper .favorites-container h2.active {
+  display: block;
+}
 .favorites-root .favorites-wrapper .favorites-container .favorites-block {
   display: flex;
   flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
 }
 .favorites-root .favorites-wrapper .favorites-container .favorites-block .favorites-item {
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 11px 5px rgba(195, 195, 195, 0.3);
   position: relative;
-  width: 15%;
+  width: 20.7%;
   height: 400px;
   margin: 10px 0 0 10px;
-  background-color: #049900;
   text-align: center;
+  animation: favoriteItemAnim 0.5s;
+  margin: 50px 0 0 50px;
 }
 .favorites-root .favorites-wrapper .favorites-container .favorites-block .favorites-item img {
   width: 100%;
@@ -165,14 +191,23 @@
   bottom: 5px;
   right: 5px;
 }
+@keyframes favoriteItemAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .favAdd {
   cursor: pointer;
   font-size: 22px;
   transition: all 0.2s ease-in-out;
+  color: #ff253a;
 }
 .favAdd.active {
-  color: red;
+  color: #2aff00;
 }
 
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */

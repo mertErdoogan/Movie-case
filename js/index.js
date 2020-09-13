@@ -136,6 +136,11 @@ $(function () {
     $(document).on("click", "i.favAdd", (e) => {
         handleAddFavItem(e);
         // handleAddFavItem(e.target.parentElement.children[0].src);
+        if(favStore.length === 1) {
+            $(".favorites-container > h2").addClass("active");
+        } else if(favStore.length === 0){
+            $(".favorites-container > h2").removeClass("active");
+        }
     })
 
 })
